@@ -29,15 +29,15 @@ int main() {
 	ss >> oct;
 	cout << "友善的八进制乘法教学程序。" << endl;
 	cout << "输入正确答案或GG进入下一题。输入QNMD结束程序。" << endl;
-	cout << "数字不接受大写字母。" << endl;
+	// cout << "数字不接受大写字母。" << endl;
 	while (1) {
+		num++;
 		x = 0;
 		y = 0;
 		while (x < 8) x = rand() % 64;
 		while (y < 8) y = rand() % 64;
 		ss << x * y;
 		answer = ss.str();
-		num++;
 		cout << endl << "第" << num << "题" << endl;
 		cout << x << " × " << y << " = " << endl;
 		while (1) {
@@ -53,11 +53,13 @@ int main() {
 				return 0;
 			}
 			else if (product == answer) {
-				cout << "  按计算器有什么了不起" << endl;
+				if (rand() % 2 == 0) cout << "  按计算器谁不会" << endl;
+				else  cout << "  我孙子算的都比你快" << endl;
 				break;
 			}
 			else {
-				cout << "  傻逼" << endl;
+				if(rand() % 2 == 0) cout << "  傻逼" << endl;
+				else  cout << "  蠢蛋" << endl;
 				continue;
 			}
 		}
